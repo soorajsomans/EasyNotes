@@ -11,13 +11,6 @@ mongoose.Promise = global.Promise;
 
 const app = express(); // create express app
 
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  res.setHeader( "Access-Control-Allow-Methods", "PUT, POST, GET, DELETE, PATCH, OPTIONS" );
-  next();
-});
-
 app.use(bodyParser.urlencoded({extended: true})); // parse requests of content-type - application/x-www-form-urlencoded
 
 app.use(bodyParser.json()); // parse requests of content-type - application/json

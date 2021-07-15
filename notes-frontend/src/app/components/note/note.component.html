@@ -1,0 +1,14 @@
+<div class="container text-center">
+    <form (ngSubmit)="!noteForm.invalid && saveNote()" #noteForm="ngForm">
+        <input class="col-6 text" type="text" placeholder="Title" [(ngModel)]="note.title" required="required"
+            name="title" #title="ngModel"><br><br>
+        <textarea class="notebook" rows="20" cols="100" placeholder="Add Your Note Here" [(ngModel)]="note.content"
+            required="required" name="content" #content="ngModel">
+        </textarea>
+        <br>
+
+        <button class="col-2 btn btn-outline-success " type="submit" [disabled]="noteForm.invalid">Save</button>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <button class="col-2 btn btn-outline-danger " (click)="cancel()">Cancel</button>
+    </form>
+</div>

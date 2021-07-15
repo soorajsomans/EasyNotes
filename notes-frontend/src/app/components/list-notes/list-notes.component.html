@@ -1,0 +1,36 @@
+    
+    
+<div class="container">
+    <div class="text-center"> 
+   <button class="btn btn-outline-success text-center" style="text-align: center;" (click)="addNote()">Add Note</button>
+   <br>
+   <br>
+    </div>
+    <div class="alert alert-danger" *ngIf="deleteMessage">{{deleteMessage}}</div>
+    <div class="card-columns" >
+        <div *ngFor="let note of notes">
+            <div class="card mb-3" style="max-width: 20rem;">
+                <div class="card-header bg-warning" >
+                    <button type="button" class="close" (click)="deleteNote(note._id)">
+                        <i class="material-icons">close</i>
+                    </button>
+                    <button type="button" class="close" (click)="update(note._id)">
+                        <i class="material-icons">mode_edit</i>
+                    </button>
+                    <h5 class="card-title">{{note.title}}</h5>
+                </div>
+           
+            <div class="card-body" style="background: rgb(243, 238, 164); ">
+               
+                <p class="card-text">{{note.content}}</p>
+
+            </div>
+            <div class="card-footer text-center" style="border-top: 0px; background-color: rgb(243, 238, 164);">
+                <small class="text-muted">Last updated at {{note.updatedAt | date:'yyyy-MM-dd hh:mm aa'}}</small>
+            </div>
+        </div>
+        <br>
+    </div>
+
+</div>
+</div>
