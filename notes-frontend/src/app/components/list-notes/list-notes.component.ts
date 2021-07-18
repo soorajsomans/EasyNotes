@@ -26,7 +26,7 @@ export class ListNotesComponent implements OnInit {
   }
 
   addNote(){
-    this.router.navigate(['note','new'])
+    this.router.navigate(['add-note'])
   }
   getNotes(){
     this.noteData.getAllNotes().subscribe(data=>{

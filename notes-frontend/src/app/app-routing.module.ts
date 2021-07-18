@@ -4,8 +4,10 @@ import { ListNotesComponent } from './components/list-notes/list-notes.component
 import { NoteComponent } from './components/note/note.component';
 
 const routes: Routes = [
-  {path:'',component:ListNotesComponent},
-  {path:'note/:id',component:NoteComponent}
+  {path:'',redirectTo: 'easy-notes', pathMatch: 'full'},
+  {path:'easy-notes',component:ListNotesComponent},
+  {path:'note/:id',component:NoteComponent},
+  {path:'add-note',component:NoteComponent}
 
 ];
 
